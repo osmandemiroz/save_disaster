@@ -5,6 +5,7 @@
 *.cmd text eol=crlf
 *.ps1 text eol=crlf
 
+
 # Check out the following as ln always for osx/linux/cygwin
 *.sh text eol=lf
 
@@ -37,3 +38,7 @@
 *.swift linguist-language=Dart
 *.m linguist-language=Dart
 *.h linguist-language=Dart
+*.cc linguist-language=Dart
+*.cpp linguist-language=Dart
+*.cmake linguist-language=Dart
+*.html linguist-language=Dart
