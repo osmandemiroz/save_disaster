@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:save_disaster/feature/home/home_view.dart';
+import 'package:save_disaster/feature/splash/view/splash_view.dart';
+import 'package:save_disaster/product/init/theme/color_schemes.g.dart';
 
 void main() => runApp(const MyApp());
 
@@ -11,13 +12,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Renault'),
-        ),
-        body: const HomeView(),
+      theme: ThemeData(
+        useMaterial3: true,
+        colorScheme: ProductColorSchemes.lightColorScheme,
       ),
+      darkTheme: ThemeData(
+        useMaterial3: true,
+        colorScheme: ProductColorSchemes.darkColorScheme,
+      ),
+      debugShowCheckedModeBanner: false,
+      home: const SplashView(),
     );
   }
 }

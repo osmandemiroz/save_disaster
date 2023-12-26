@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Primary Dark Green Colors -->
+    <color name="colorPrimary">#004d40</color>
+    <color name="colorPrimaryDark">#00251a</color>
+
+    <!-- Accent Green Color -->
+    <color name="colorAccent">#64dd17</color>
+
+    <!-- Text Colors -->
+    <color name="textColorPrimary">#ffffff</color>
+    <color name="textColorSecondary">#b2dfdb</color>
+
+    <!-- Background Colors -->
+    <color name="backgroundColorPrimary">#263238</color>
+    <color name="backgroundColorSecondary">#37474f</color>
+
+    <!-- Divider Color -->
+    <color name="dividerColor">#546e7a</color>
+
+    <!-- Button Colors -->
+    <color name="buttonColor">#64dd17</color>
+    <color name="buttonTextColor">#ffffff</color>
+
+    <!-- Other Colors -->
+    <color name="accentColor">#64dd17</color>
+    <color name="windowBackground">#263238</color>
+
+</resources>
