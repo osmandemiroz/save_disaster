@@ -43,4 +43,4 @@
 *.cmake linguist-language=Dart
 *.html linguist-language=Dart
 *.txt linguist-language=Dart
-*.rb linguist-language=Dart
+*.PodFile linguist-language=Dart
