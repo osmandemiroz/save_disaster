@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ProductColorSchemes.darkColorScheme,
       ),
       debugShowCheckedModeBanner: false,
-      home: const SplashView(),
+      home: SplashView(),
     );
   }
 }
