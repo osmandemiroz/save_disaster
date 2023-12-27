@@ -1,6 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-/// This is the home view
+/// This is the home view of the app
+@RoutePage()
 class HomeView extends StatelessWidget {
   /// This widget is constructor for the home view
   const HomeView({super.key});

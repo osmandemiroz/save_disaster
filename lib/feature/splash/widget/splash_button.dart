@@ -43,12 +43,15 @@ class _SplashButtonState extends State<SplashButton> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 // ignore: prefer_const_literals_to_create_immutables
                 children: [
-                  Text(
-                    widget.text,
-                    style: TextStyle(
-                      fontSize: context.sized.height * 0.02,
-                      fontWeight: FontWeight.w600,
-                      color: Theme.of(context).scaffoldBackgroundColor,
+                  SizedBox(
+                    width: context.sized.width * 0.3,
+                    child: Text(
+                      widget.text,
+                      style: TextStyle(
+                        fontSize: context.sized.height * 0.02,
+                        fontWeight: FontWeight.w600,
+                        color: Theme.of(context).scaffoldBackgroundColor,
+                      ),
                     ),
                   ),
                   Container(

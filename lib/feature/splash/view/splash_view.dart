@@ -1,12 +1,14 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 import 'package:save_disaster/feature/splash/model/contents_model.dart';
 import 'package:save_disaster/feature/splash/widget/splash_button.dart';
+import 'package:save_disaster/product/navigation/app_router.dart';
 
 ///splash view of a splash screen
-
+@RoutePage()
 class SplashView extends StatefulWidget {
   ///splash view constructor
   const SplashView({
@@ -90,22 +92,27 @@ class _SplashViewState extends State<SplashView> {
               ),
             ),
           ),
-          Expanded(
-            child: SplashButton(
-              onTap: () {
-                if (currentIndex.value == contents.length - 1) {
-                  //TODO: Navigate to the home screen
-                } else {
-                  _pageController.nextPage(
-                    duration: context.duration.durationLow,
-                    curve: Curves.decelerate,
-                  );
-                }
-              },
-              text: currentIndex.value == contents.length - 1
-                  ? 'Get Started'
-                  : 'Next',
-            ),
+          ValueListenableBuilder(
+            valueListenable: currentIndex,
+            builder: (BuildContext context, int value, Widget? child) {
+              return Expanded(
+                child: SplashButton(
+                  onTap: () {
+                    if (currentIndex.value == contents.length - 1) {
+                      context.router.push(const HomeRoute());
+                    } else {
+                      _pageController.nextPage(
+                        duration: context.duration.durationLow,
+                        curve: Curves.decelerate,
+                      );
+                    }
+                  },
+                  text: currentIndex.value == contents.length - 1
+                      ? 'Get Started'
+                      : 'Next',
+                ),
+              );
+            },
           ),
           SizedBox(
             height: context.sized.height * 0.05,
