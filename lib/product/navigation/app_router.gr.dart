@@ -15,10 +15,40 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    AvalancheRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const AvalancheView(),
+      );
+    },
+    EarthquakeRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const EarthquakeView(),
+      );
+    },
+    FireRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const FireView(),
+      );
+    },
+    FloodRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const FloodView(),
+      );
+    },
     HomeRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const HomeView(),
+      );
+    },
+    SideBarRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SideBarView(),
       );
     },
     SplashRoute.name: (routeData) {
@@ -31,6 +61,62 @@ abstract class _$AppRouter extends RootStackRouter {
 }
 
 /// generated route for
+/// [AvalancheView]
+class AvalancheRoute extends PageRouteInfo<void> {
+  const AvalancheRoute({List<PageRouteInfo>? children})
+      : super(
+          AvalancheRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'AvalancheRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [EarthquakeView]
+class EarthquakeRoute extends PageRouteInfo<void> {
+  const EarthquakeRoute({List<PageRouteInfo>? children})
+      : super(
+          EarthquakeRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'EarthquakeRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [FireView]
+class FireRoute extends PageRouteInfo<void> {
+  const FireRoute({List<PageRouteInfo>? children})
+      : super(
+          FireRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'FireRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [FloodView]
+class FloodRoute extends PageRouteInfo<void> {
+  const FloodRoute({List<PageRouteInfo>? children})
+      : super(
+          FloodRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'FloodRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
 /// [HomeView]
 class HomeRoute extends PageRouteInfo<void> {
   const HomeRoute({List<PageRouteInfo>? children})
@@ -40,6 +126,20 @@ class HomeRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'HomeRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SideBarView]
+class SideBarRoute extends PageRouteInfo<void> {
+  const SideBarRoute({List<PageRouteInfo>? children})
+      : super(
+          SideBarRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SideBarRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

@@ -1,7 +1,12 @@
 // ignore_for_file: avoid_positional_boolean_parameters
 
 import 'package:auto_route/auto_route.dart';
-import 'package:save_disaster/feature/home/home_view.dart';
+import 'package:save_disaster/feature/avalanche/avalacnhe_view.dart';
+import 'package:save_disaster/feature/earthquake/earthquake_view.dart';
+import 'package:save_disaster/feature/fire/fire_view.dart';
+import 'package:save_disaster/feature/flood/flood_view.dart';
+import 'package:save_disaster/feature/home/view/home_view.dart';
+import 'package:save_disaster/feature/home/view/side_menu_view.dart';
 import 'package:save_disaster/feature/splash/view/splash_view.dart';
 
 part 'app_router.gr.dart';
@@ -26,6 +31,21 @@ final class AppRouter extends _$AppRouter {
         AutoRoute(
           page: HomeRoute.page,
           initial: !showSplash,
+        ),
+        AutoRoute(
+          page: SideBarRoute.page,
+        ),
+        AutoRoute(
+          page: EarthquakeRoute.page,
+        ),
+        AutoRoute(
+          page: FloodRoute.page,
+        ),
+        AutoRoute(
+          page: AvalancheRoute.page,
+        ),
+        AutoRoute(
+          page: FireRoute.page,
         ),
       ];
 }

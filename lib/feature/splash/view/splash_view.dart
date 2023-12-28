@@ -99,7 +99,9 @@ class _SplashViewState extends State<SplashView> {
                 child: SplashButton(
                   onTap: () {
                     if (currentIndex.value == contents.length - 1) {
-                      context.router.push(const HomeRoute());
+                      context.router.push(
+                        const HomeRoute(),
+                      );
                     } else {
                       _pageController.nextPage(
                         duration: context.duration.durationLow,
