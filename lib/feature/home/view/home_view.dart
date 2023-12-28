@@ -81,7 +81,9 @@ class _HomeViewState extends State<HomeView>
               child: Transform.scale(
                 scale: _scaleAnimation.value,
                 child: ClipRRect(
-                  borderRadius: context.border.highBorderRadius,
+                  borderRadius: isSideBarClosed
+                      ? BorderRadius.zero
+                      : context.border.highBorderRadius,
                   child: mainHomeView(context),
                 ),
               ),
