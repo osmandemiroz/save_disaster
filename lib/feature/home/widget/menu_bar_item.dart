@@ -28,7 +28,7 @@ class MenuBarItem extends StatelessWidget {
           width: context.sized.width * 0.8,
           child: Container(
             decoration: BoxDecoration(
-              color: Theme.of(context).primaryColorLight,
+              color: Theme.of(context).secondaryHeaderColor,
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(context.sized.height * 0.04),
               ),

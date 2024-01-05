@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
+import 'package:save_disaster/product/gen/index.dart';
 
 ///AppVersionCard of home page
 class AppVersionCard extends StatelessWidget {
@@ -19,10 +20,13 @@ class AppVersionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: const Icon(Icons.apple),
+      dense: true,
+      minLeadingWidth: 0,
+      visualDensity: const VisualDensity(vertical: -4, horizontal: -4),
       title: Text(
         appName,
         style: TextStyle(
+          color: ColorName.textColorPrimary,
           fontWeight: FontWeight.bold,
           fontSize: context.sized.height * 0.02,
         ),
@@ -30,6 +34,7 @@ class AppVersionCard extends StatelessWidget {
       subtitle: Text(
         appVersion,
         style: TextStyle(
+          color: ColorName.textColorSecondary,
           fontSize: context.sized.height * 0.015,
         ),
       ),

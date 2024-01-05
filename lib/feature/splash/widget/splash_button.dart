@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
+import 'package:save_disaster/product/gen/index.dart';
 
 /// widget
 class SplashButton extends StatefulWidget {
@@ -29,12 +30,12 @@ class _SplashButtonState extends State<SplashButton> {
               height: context.sized.height * 0.08,
               width: context.sized.height * 0.3,
               decoration: BoxDecoration(
-                gradient: LinearGradient(
+                gradient: const LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   colors: [
-                    Theme.of(context).hoverColor,
-                    Theme.of(context).dividerColor,
+                    ColorName.backgroundColorSecondary,
+                    ColorName.windowBackground,
                   ],
                 ),
                 borderRadius: BorderRadius.circular(context.sized.height * 0.2),
@@ -50,7 +51,7 @@ class _SplashButtonState extends State<SplashButton> {
                       style: TextStyle(
                         fontSize: context.sized.height * 0.02,
                         fontWeight: FontWeight.w600,
-                        color: Theme.of(context).scaffoldBackgroundColor,
+                        color: Theme.of(context).primaryColorLight,
                       ),
                     ),
                   ),
@@ -58,12 +59,12 @@ class _SplashButtonState extends State<SplashButton> {
                     padding: context.padding.low,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Theme.of(context).cardColor,
+                      color: Theme.of(context).primaryColorLight,
                     ),
                     child: Icon(
                       Icons.arrow_right_alt_outlined,
                       size: context.sized.height * 0.05,
-                      color: Theme.of(context).primaryColor,
+                      color: ColorName.backgroundColorSecondary,
                     ),
                   ),
                 ],

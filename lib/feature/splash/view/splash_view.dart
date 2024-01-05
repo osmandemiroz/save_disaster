@@ -137,7 +137,7 @@ class _SplashViewState extends State<SplashView> {
               : context.sized.width * 0.03,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(context.sized.mediumValue),
-            color: Theme.of(context).buttonTheme.colorScheme?.primary,
+            color: Theme.of(context).primaryColorLight,
           ),
         );
       },

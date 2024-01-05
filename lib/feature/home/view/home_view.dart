@@ -5,10 +5,14 @@ import 'dart:math';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
+import 'package:save_disaster/feature/home/model/home_model.dart';
 import 'package:save_disaster/feature/home/view/side_menu_view.dart';
 import 'package:save_disaster/product/gen/index.dart';
+import 'package:save_disaster/product/widget/big_text.dart';
+import 'package:save_disaster/product/widget/desc_text.dart';
 
 /// This is the home view of the app
+/// It contains the side menu and the content
 @RoutePage()
 class HomeView extends StatefulWidget {
   /// This widget is constructor for the home view
@@ -21,7 +25,7 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView>
     with SingleTickerProviderStateMixin {
   ///isSideBarOpened value of the home view
-  bool isSideBarClosed = false;
+  bool isSideBarClosed = true;
   late AnimationController _animationController;
 
   late Animation<double> _animation;
@@ -99,6 +103,7 @@ class _HomeViewState extends State<HomeView>
       resizeToAvoidBottomInset: false,
       extendBody: true,
       appBar: AppBar(
+        centerTitle: true,
         title: const Text('Home'),
         leading: IconButton(
           onPressed: () {
@@ -107,9 +112,7 @@ class _HomeViewState extends State<HomeView>
             } else {
               _animationController.reverse();
             }
-            setState(() {
-              isSideBarClosed = !isSideBarClosed;
-            });
+            isSideBarClosed = !isSideBarClosed;
           },
           icon: Icon(
             Icons.more_vert_outlined,
@@ -120,13 +123,20 @@ class _HomeViewState extends State<HomeView>
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         padding: context.padding.horizontalLow,
-        child: const Column(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ColoredBox(
-              color: Colors.red,
-              child: Text('Home'),
-            ),
+            BigText(title: homeModel[0].title),
+            DescText(description: homeModel[0].description),
+            SizedBox(height: context.sized.height * 0.2),
+            BigText(title: homeModel[1].title),
+            DescText(description: homeModel[1].description),
+            SizedBox(height: context.sized.height * 0.2),
+            BigText(title: homeModel[2].title),
+            DescText(description: homeModel[2].description),
+            SizedBox(height: context.sized.height * 0.2),
+            BigText(title: homeModel[3].title),
+            DescText(description: homeModel[3].description),
           ],
         ),
       ),
