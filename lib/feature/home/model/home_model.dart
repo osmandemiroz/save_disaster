@@ -1,13 +1,10 @@
-///Home Model class
-library;
-// ignore_for_file: lines_longer_than_80_chars
-
-part of '../view/home_view.dart';
+import 'package:flutter/material.dart';
 
 ///Home Model
-class HomeModel {
+@immutable
+final class HomeModel {
   ///Home Model constructor
-  HomeModel({
+  const HomeModel({
     required this.title,
     required this.description,
   });
@@ -19,26 +16,31 @@ class HomeModel {
 
   ///home model description
   final String description;
+
+  ///get home model
+  static List<HomeModel> getHomeModel(int index) {
+    return [_homeModel[index]];
+  }
 }
 
 ///Home model list
-List<HomeModel> homeModel = [
-  HomeModel(
+final List<HomeModel> _homeModel = [
+  const HomeModel(
     title: 'Natural Disaster Awareness',
     description:
         'Welcome to Save Disaster, your guide to natural disaster preparedness. Stay informed and be ready for earthquakes, floods, fires, and avalanches.',
   ),
-  HomeModel(
+  const HomeModel(
     title: 'Disaster-Specific Sections',
     description:
         'Navigate through disaster-specific sections: "Earthquake," "Flood," "Fire," and "Avalanche." Find tailored information for each type of natural disaster.',
   ),
-  HomeModel(
+  const HomeModel(
     title: 'Before and After Tips',
     description:
         'Prepare for the unexpected with our pre-disaster tips. Learn what to do before and after earthquakes, floods, fires, and avalanches for a safer outcome',
   ),
-  HomeModel(
+  const HomeModel(
     title: 'Emergency Preparedness',
     description:
         'Get prepared for emergencies with our disaster preparedness tools. Learn how to stay informed, stay safe, and be prepared for life.',
