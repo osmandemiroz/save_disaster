@@ -51,6 +51,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const SideBarView(),
       );
     },
+    SosRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SosView(),
+      );
+    },
     SplashRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -140,6 +146,20 @@ class SideBarRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'SideBarRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SosView]
+class SosRoute extends PageRouteInfo<void> {
+  const SosRoute({List<PageRouteInfo>? children})
+      : super(
+          SosRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SosRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

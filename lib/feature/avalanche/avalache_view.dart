@@ -1,22 +1,21 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:save_disaster/feature/flood/flood_view_mixin.dart';
+import 'package:save_disaster/feature/avalanche/avalanche_view_mixin.dart';
 
-///Flood view of the app
+///avalanche view of the app
 @RoutePage()
-class FloodView extends StatefulWidget {
-  ///Flood view constructor
-  const FloodView({super.key});
+class AvalancheView extends StatefulWidget {
+  ///avalanche view constructor
+  const AvalancheView({super.key});
 
   @override
-  State<FloodView> createState() => _FloodViewState();
+  State<AvalancheView> createState() => _AvalancheViewState();
 }
 
-class _FloodViewState extends State<FloodView> with FloodViewMixin {
+class _AvalancheViewState extends State<AvalancheView> with AvalancheViewMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
       bottomNavigationBar: BottomNavigationBar(
         items: bottomNavigationBarItems,
         currentIndex: currentPageIndex,

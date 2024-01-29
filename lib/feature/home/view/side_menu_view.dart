@@ -63,6 +63,14 @@ class _SideBarViewState extends State<SideBarView> {
               SizedBox(
                 height: context.sized.height * 0.04,
               ),
+              MenuBarItem(
+                onTap: () => context.router.push(const SosRoute()),
+                icon: Assets.images.icSos.image(),
+                menuName: 'SOS',
+              ),
+              SizedBox(
+                height: context.sized.height * 0.04,
+              ),
             ],
           ),
         ),

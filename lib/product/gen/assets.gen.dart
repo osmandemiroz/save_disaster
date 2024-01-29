@@ -51,13 +51,16 @@ class $AssetsImagesGen {
   AssetGenImage get icFlood =>
       const AssetGenImage('assets/images/ic_flood.png');
 
+  /// File path: assets/images/ic_sos.png
+  AssetGenImage get icSos => const AssetGenImage('assets/images/ic_sos.png');
+
   /// File path: assets/images/img_world.png
   AssetGenImage get imgWorld =>
       const AssetGenImage('assets/images/img_world.png');
 
   /// List of all assets
   List<AssetGenImage> get values =>
-      [icAvalanche, icEarthquake, icFire, icFlood, imgWorld];
+      [icAvalanche, icEarthquake, icFire, icFlood, icSos, imgWorld];
 }
 
 class $AssetsLottieGen {

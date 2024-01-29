@@ -30,9 +30,14 @@
     },
     "editor.inlineSuggest.enabled": true,
     "cSpell.words": [
+        "appspot",
+        "firebaseapp",
         "GDSC",
+        "Geolocator",
         "htmls",
         "kartal",
+        "placemark",
         "vsync"
-    ]
+    ],
+    "java.configuration.updateBuildConfiguration": "interactive"
 }
