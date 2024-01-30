@@ -26,13 +26,12 @@ class _SosViewState extends State<SosView> with SosViewMixin {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.redAccent,
               ),
-              onPressed: () async => initializeAddress,
+              onPressed: initializeAddress,
               icon: const Icon(Icons.emergency_outlined),
               label: const Text('SOS'),
             ),
             FutureBuilder(
-              future: Future.delayed(
-                  const Duration(seconds: 3), () => 'Data Added'),
+              future: Future.delayed(const Duration(seconds: 5)),
               // ignore: strict_raw_type
               builder: (BuildContext context, AsyncSnapshot snapshot) {
                 switch (snapshot.connectionState) {

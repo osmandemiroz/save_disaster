@@ -1,5 +1,6 @@
 // ignore_for_file: lines_longer_than_80_chars
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
@@ -8,7 +9,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 ///sos view mixin
 mixin SosViewMixin on State<SosView> {
-  ///firebase instance of the client
+  ///collection reference
+  CollectionReference addresses =
+      FirebaseFirestore.instance.collection('addresses');
 
   ///current location of the client
   Position? currentLocation;
@@ -50,7 +53,6 @@ mixin SosViewMixin on State<SosView> {
       setState(() {
         currentAddress =
             '${place.street}, ${place.subLocality}, ${place.locality}, ${place.postalCode}, ${place.country}';
-        saveAddress();
       });
     } catch (e) {
       //TODO: add error handling
@@ -71,6 +73,22 @@ mixin SosViewMixin on State<SosView> {
     setState(() async {
       currentLocation = await getCurrentLocation();
       await getAddressFromCoordinates();
+      await saveAddress();
+      await addAddresses();
     });
+  }
+
+  ///add address to service
+  Future<void> addAddresses() {
+    return addresses
+        .add({
+          'address': currentAddress,
+          'latitude': currentLocation!.latitude,
+          'longitude': currentLocation!.longitude,
+          'name': 'osman',
+          'nameId': 'osman',
+        })
+        .then((value) => print('User Added'))
+        .catchError((error) => print('Failed to add user: $error'));
   }
 }
