@@ -1,14 +1,38 @@
-// ignore_for_file: lines_longer_than_80_chars
+// ignore_for_file: lines_longer_than_80_chars, inference_failure_on_untyped_parameter
 
+import 'package:auto_route/auto_route.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:save_disaster/feature/sos/sos_view.dart';
+import 'package:save_disaster/product/navigation/app_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 ///sos view mixin
 mixin SosViewMixin on State<SosView> {
+  @override
+  void dispose() {
+    super.dispose();
+    nameController.dispose();
+    surnameController.dispose();
+  }
+
+  ///button pressed
+  final ValueNotifier<bool> isButtonPressed = ValueNotifier<bool>(false);
+
+  ///emergency color
+  final Color emergencyColor = Colors.redAccent;
+
+  ///name controller
+  TextEditingController nameController = TextEditingController();
+
+  ///surname controller
+  TextEditingController surnameController = TextEditingController();
+
+  ///button name of the sos view
+  final String buttonName = 'SOS';
+
   ///collection reference
   CollectionReference addresses =
       FirebaseFirestore.instance.collection('addresses');
@@ -27,11 +51,11 @@ mixin SosViewMixin on State<SosView> {
 
   ///get the currentLocation from client and check the permissions
   Future<Position> getCurrentLocation() async {
+    isButtonPressed.value = true;
+
     ///Check the permission of the app
     servicePermission = await Geolocator.isLocationServiceEnabled();
-    if (!servicePermission) {
-      print('location service is not enabled');
-    }
+
     permission = await Geolocator.checkPermission();
 
     if (permission == LocationPermission.denied) {
@@ -55,8 +79,7 @@ mixin SosViewMixin on State<SosView> {
             '${place.street}, ${place.subLocality}, ${place.locality}, ${place.postalCode}, ${place.country}';
       });
     } catch (e) {
-      //TODO: add error handling
-      print(e);
+      throw Exception(e);
     }
   }
 
@@ -80,15 +103,28 @@ mixin SosViewMixin on State<SosView> {
 
   ///add address to service
   Future<void> addAddresses() {
-    return addresses
-        .add({
-          'address': currentAddress,
-          'latitude': currentLocation!.latitude,
-          'longitude': currentLocation!.longitude,
-          'name': 'osman',
-          'nameId': 'osman',
-        })
-        .then((value) => print('User Added'))
-        .catchError((error) => print('Failed to add user: $error'));
+    return addresses.add({
+      'address': currentAddress,
+      'latitude': currentLocation!.latitude,
+      'longitude': currentLocation!.longitude,
+      'name': nameController.text,
+      'nameId': surnameController.text,
+      'time': Timestamp.now(),
+    }).then((value) {
+      nameController.clear();
+      surnameController.clear();
+      isButtonPressed.value = false;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('SOS request sent'),
+        ),
+      );
+    }).catchError((error) => throw Exception(error));
+  }
+
+  ///leading go back on pressed function
+  void goBackHome() {
+    dispose();
+    context.router.push(const HomeRoute());
   }
 }

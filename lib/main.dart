@@ -1,17 +1,15 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:save_disaster/firebase_options.dart';
+import 'package:save_disaster/product/init/application_initializer.dart';
 import 'package:save_disaster/product/init/theme/color_schemes.g.dart';
 import 'package:save_disaster/product/navigation/app_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-
+  await ApplicationInitializer.setUp();
   final preferences = await SharedPreferences.getInstance();
+
   final firstRun = preferences.getBool('firstRun') ?? true;
+
   runApp(
     _MyApp(
       showSplash: firstRun,

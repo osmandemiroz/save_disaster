@@ -23,12 +23,13 @@ class BigText extends StatelessWidget {
         fontStyle: FontStyle.normal,
         shadows: [
           Shadow(
-            color: Theme.of(context).textTheme.bodyMedium!.color!,
+            color:
+                Theme.of(context).textTheme.bodyMedium!.color!.withOpacity(0.4),
             offset: const Offset(1, 1),
-            blurRadius: context.sized.normalValue,
+            blurRadius: context.sized.lowValue,
           ),
         ],
-        wordSpacing: context.sized.lowValue,
+        wordSpacing: context.sized.lowValue * 0.5,
       ),
     );
   }

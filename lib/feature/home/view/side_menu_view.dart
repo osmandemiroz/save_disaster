@@ -37,7 +37,7 @@ class _SideBarViewState extends State<SideBarView> {
                 menuName: 'Earthquake',
               ),
               SizedBox(
-                height: context.sized.height * 0.04,
+                height: context.sized.height * 0.02,
               ),
               MenuBarItem(
                 onTap: () => context.router.push(const FloodRoute()),
@@ -45,7 +45,7 @@ class _SideBarViewState extends State<SideBarView> {
                 menuName: 'Flood',
               ),
               SizedBox(
-                height: context.sized.height * 0.04,
+                height: context.sized.height * 0.02,
               ),
               MenuBarItem(
                 onTap: () => context.router.push(const AvalancheRoute()),
@@ -53,7 +53,7 @@ class _SideBarViewState extends State<SideBarView> {
                 menuName: 'Avalanche',
               ),
               SizedBox(
-                height: context.sized.height * 0.04,
+                height: context.sized.height * 0.02,
               ),
               MenuBarItem(
                 onTap: () => context.router.push(const FireRoute()),
@@ -61,7 +61,7 @@ class _SideBarViewState extends State<SideBarView> {
                 menuName: 'Fire',
               ),
               SizedBox(
-                height: context.sized.height * 0.04,
+                height: context.sized.height * 0.02,
               ),
               MenuBarItem(
                 onTap: () => context.router.push(const SosRoute()),
@@ -69,7 +69,20 @@ class _SideBarViewState extends State<SideBarView> {
                 menuName: 'SOS',
               ),
               SizedBox(
-                height: context.sized.height * 0.04,
+                height: context.sized.height * 0.02,
+              ),
+              MenuBarItem(
+                icon: Assets.images.icMeetingPoint.image(),
+                onTap: () => context.router.push(const MeetingPointRoute()),
+                menuName: 'Meeting Point',
+              ),
+              SizedBox(
+                height: context.sized.height * 0.02,
+              ),
+              MenuBarItem(
+                icon: Assets.images.icBloodDonation.image(),
+                menuName: 'Blood Donation',
+                onTap: () => context.router.push(const BloodDonationRoute()),
               ),
             ],
           ),

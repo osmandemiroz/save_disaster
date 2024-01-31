@@ -38,7 +38,10 @@ class MenuBarItem extends StatelessWidget {
         ListTile(
           contentPadding: context.padding.verticalLow,
           onTap: onTap,
-          leading: icon,
+          leading: SizedBox(
+            height: context.sized.height * 0.05,
+            child: icon,
+          ),
           title: Text(
             menuName,
             style: TextStyle(fontSize: context.sized.height * 0.025),

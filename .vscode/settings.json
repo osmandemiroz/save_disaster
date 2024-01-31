@@ -36,6 +36,7 @@
         "GDSC",
         "Geolocator",
         "htmls",
+        "inappwebview",
         "kartal",
         "placemark",
         "vsync"

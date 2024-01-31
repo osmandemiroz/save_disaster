@@ -1,6 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:kartal/kartal.dart';
 import 'package:save_disaster/feature/sos/sos_view_mixin.dart';
+import 'package:save_disaster/product/widget/big_text.dart';
 
 ///Sos View of the app
 @RoutePage()
@@ -16,42 +18,81 @@ class _SosViewState extends State<SosView> with SosViewMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        leading: IconButton(
+          onPressed: goBackHome,
+          icon: const Icon(Icons.close_sharp),
+        ),
+      ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(currentAddress),
-            ElevatedButton.icon(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.redAccent,
+        child: Padding(
+          padding: context.padding.normal,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              BigText(
+                title: 'JUST USE FOR EMERGENCY',
+                color: emergencyColor,
               ),
-              onPressed: initializeAddress,
-              icon: const Icon(Icons.emergency_outlined),
-              label: const Text('SOS'),
-            ),
-            FutureBuilder(
-              future: Future.delayed(const Duration(seconds: 5)),
-              // ignore: strict_raw_type
-              builder: (BuildContext context, AsyncSnapshot snapshot) {
-                switch (snapshot.connectionState) {
-                  case ConnectionState.waiting:
+              SizedBox(height: context.sized.height * 0.05),
+              TextField(
+                controller: nameController,
+                decoration: InputDecoration(
+                  hintText: 'Enter Your Name',
+                  border: const OutlineInputBorder().copyWith(
+                    borderRadius: context.border.normalBorderRadius,
+                  ),
+                ),
+              ),
+              SizedBox(height: context.sized.height * 0.02),
+              TextField(
+                controller: surnameController,
+                decoration: InputDecoration(
+                  hintText: 'Enter your Surname',
+                  border: const OutlineInputBorder().copyWith(
+                    borderRadius: context.border.normalBorderRadius,
+                  ),
+                ),
+              ),
+              Text(currentAddress),
+              ValueListenableBuilder<bool>(
+                valueListenable: isButtonPressed,
+                builder: (context, value, child) {
+                  if (value) {
                     return const CircularProgressIndicator();
-                  case ConnectionState.none:
-                    break;
-                  case ConnectionState.active:
-                    return const LinearProgressIndicator();
-                  case ConnectionState.done:
-                    return const FlutterLogo();
-                }
-                if (snapshot.hasData) {
-                  return const Text('Data Added');
-                } else {
-                  return const Text('No Data');
-                }
-              },
-            ),
-          ],
+                  } else {
+                    return child!;
+                  }
+                },
+                child: ElevatedButton.icon(
+                  style: ElevatedButton.styleFrom(
+                    fixedSize: Size(
+                      context.sized.width * 0.3,
+                      context.sized.height * 0.08,
+                    ),
+                    backgroundColor: emergencyColor,
+                  ),
+                  onPressed: () {
+                    if (nameController.text.isEmpty ||
+                        surnameController.text.isEmpty) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          behavior: SnackBarBehavior.floating,
+                          content: Text('Enter your name and surname'),
+                        ),
+                      );
+                    } else {
+                      initializeAddress();
+                    }
+                  },
+                  icon: const Icon(Icons.emergency),
+                  label: Text(
+                    buttonName,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

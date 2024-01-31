@@ -21,6 +21,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const AvalancheView(),
       );
     },
+    BloodDonationRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const BloodDonationView(),
+      );
+    },
     EarthquakeRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -43,6 +49,12 @@ abstract class _$AppRouter extends RootStackRouter {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const HomeView(),
+      );
+    },
+    MeetingPointRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const MeetingPointView(),
       );
     },
     SideBarRoute.name: (routeData) {
@@ -76,6 +88,20 @@ class AvalancheRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'AvalancheRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [BloodDonationView]
+class BloodDonationRoute extends PageRouteInfo<void> {
+  const BloodDonationRoute({List<PageRouteInfo>? children})
+      : super(
+          BloodDonationRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'BloodDonationRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
@@ -132,6 +158,20 @@ class HomeRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'HomeRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [MeetingPointView]
+class MeetingPointRoute extends PageRouteInfo<void> {
+  const MeetingPointRoute({List<PageRouteInfo>? children})
+      : super(
+          MeetingPointRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'MeetingPointRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
