@@ -32,4 +32,9 @@ abstract class Env {
 
   ///news api key
   static final String newsApiKey = _Env.newsApiKey;
+
+  @EnviedField(varName: 'NEWS_BASE_URL')
+
+  ///news base url
+  static final String newsBaseUrl = _Env.newsBaseUrl;
 }

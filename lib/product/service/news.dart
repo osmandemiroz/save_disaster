@@ -1,8 +1,9 @@
-// ignore_for_file: avoid_dynamic_calls, inference_failure_on_untyped_parameter
+// ignore_for_file: avoid_dynamic_calls, inference_failure_on_untyped_parameter, lines_longer_than_80_chars
 
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'package:save_disaster/product/config/env.dart';
 import 'package:save_disaster/product/model/article.dart';
 
 ///News service
@@ -12,8 +13,8 @@ class News {
 
   ///get news from the api
   Future<void> getNews() async {
-    const url =
-        'https://newsapi.org/v2/everything?q=earthquake&from=2024-01-03&sortBy=publishedAt&apiKey=cbaf626e073d4d258ceda39cddd9cb71';
+    final url =
+        '${Env.newsBaseUrl}&from=${DateTime.now().year}-${DateTime.now().month}-${DateTime.now().day}&sortBy=publishedAt&apiKey=${Env.newsApiKey}';
 
     final response = await http.get(Uri.parse(url));
 
