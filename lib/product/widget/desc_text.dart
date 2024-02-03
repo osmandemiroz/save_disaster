@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 
 ///DescText widget
-class DescText extends StatelessWidget {
+final class DescText extends StatelessWidget {
   ///DescText constructor
   const DescText({required this.description, super.key, this.color});
 
@@ -16,8 +16,8 @@ class DescText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       description,
-      overflow: TextOverflow.ellipsis,
-      maxLines: 30,
+      overflow: TextOverflow.fade,
+      maxLines: 7,
       style: TextStyle(
         color: color,
         fontSize: context.sized.lowValue * 1.75,

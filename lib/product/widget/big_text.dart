@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 
 ///BigText widget
-class BigText extends StatelessWidget {
+final class BigText extends StatelessWidget {
   ///BigText constructor
   const BigText({required this.title, super.key, this.color});
 
@@ -16,7 +16,9 @@ class BigText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       title,
+      maxLines: 2,
       style: TextStyle(
+        overflow: TextOverflow.ellipsis,
         color: color,
         fontSize: context.sized.lowValue * 3,
         fontWeight: FontWeight.w300,
@@ -29,7 +31,7 @@ class BigText extends StatelessWidget {
             blurRadius: context.sized.lowValue,
           ),
         ],
-        wordSpacing: context.sized.lowValue * 0.5,
+        wordSpacing: context.sized.lowValue * 0.1,
       ),
     );
   }

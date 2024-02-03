@@ -5,11 +5,10 @@ import 'dart:math';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
-import 'package:save_disaster/feature/home/model/home_model.dart';
+import 'package:save_disaster/feature/home/view/home_view_mixin.dart';
 import 'package:save_disaster/feature/home/view/side_menu_view.dart';
+import 'package:save_disaster/feature/home/widget/blog_tile_widget.dart';
 import 'package:save_disaster/product/gen/index.dart';
-import 'package:save_disaster/product/widget/big_text.dart';
-import 'package:save_disaster/product/widget/desc_text.dart';
 
 /// This is the home view of the app
 /// It contains the side menu and the content
@@ -23,7 +22,7 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView>
-    with SingleTickerProviderStateMixin {
+    with SingleTickerProviderStateMixin, HomeViewMixin {
   ///isSideBarOpened value of the home view
   bool isSideBarClosed = true;
   late AnimationController _animationController;
@@ -33,6 +32,7 @@ class _HomeViewState extends State<HomeView>
 
   @override
   void initState() {
+    getNews();
     _animationController = AnimationController(
       vsync: this,
       duration: context.duration.durationLow,
@@ -103,8 +103,9 @@ class _HomeViewState extends State<HomeView>
       resizeToAvoidBottomInset: false,
       extendBody: true,
       appBar: AppBar(
+        elevation: 0,
         centerTitle: true,
-        title: const Text('Home'),
+        title: Text(homeViewTitle),
         leading: IconButton(
           onPressed: () {
             if (isSideBarClosed) {
@@ -120,24 +121,33 @@ class _HomeViewState extends State<HomeView>
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        physics: const BouncingScrollPhysics(),
-        padding: context.padding.horizontalLow,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            BigText(title: HomeModel.getHomeModel(0)[0].title),
-            DescText(description: HomeModel.getHomeModel(0)[0].description),
-            SizedBox(height: context.sized.height * 0.2),
-            BigText(title: HomeModel.getHomeModel(1)[0].title),
-            DescText(description: HomeModel.getHomeModel(1)[0].description),
-            SizedBox(height: context.sized.height * 0.2),
-            BigText(title: HomeModel.getHomeModel(2)[0].title),
-            DescText(description: HomeModel.getHomeModel(2)[0].description),
-            SizedBox(height: context.sized.height * 0.2),
-            BigText(title: HomeModel.getHomeModel(3)[0].title),
-            DescText(description: HomeModel.getHomeModel(3)[0].description),
-          ],
+      body: ValueListenableBuilder(
+        valueListenable: isLoading,
+        builder: (BuildContext _, bool value, Widget? child) {
+          if (value) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          } else {
+            return child!;
+          }
+        },
+        child: SingleChildScrollView(
+          physics: const ClampingScrollPhysics(),
+          padding: context.padding.horizontalLow,
+          child: ListView.builder(
+            physics: const NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: articles.length,
+            itemBuilder: (_, index) {
+              return BlogTile(
+                desc: articles[index].description!,
+                imageUrl: articles[index].urlToImage!,
+                title: articles[index].title!,
+                url: articles[index].url!,
+              );
+            },
+          ),
         ),
       ),
     );
