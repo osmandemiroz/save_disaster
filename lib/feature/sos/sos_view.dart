@@ -6,7 +6,7 @@ import 'package:save_disaster/product/widget/big_text.dart';
 
 ///Sos View of the app
 @RoutePage()
-class SosView extends StatefulWidget {
+final class SosView extends StatefulWidget {
   ///Sos View Constructor
   const SosView({super.key});
 
@@ -14,7 +14,7 @@ class SosView extends StatefulWidget {
   State<SosView> createState() => _SosViewState();
 }
 
-class _SosViewState extends State<SosView> with SosViewMixin {
+final class _SosViewState extends State<SosView> with SosViewMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

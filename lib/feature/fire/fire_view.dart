@@ -5,7 +5,7 @@ import 'package:save_disaster/feature/fire/fire_view_mixin.dart';
 @RoutePage()
 
 ///fire view of the app
-class FireView extends StatefulWidget {
+final class FireView extends StatefulWidget {
   ///fire view constructor
   const FireView({super.key});
 
@@ -13,7 +13,7 @@ class FireView extends StatefulWidget {
   State<FireView> createState() => _FireViewState();
 }
 
-class _FireViewState extends State<FireView> with FireViewMixin {
+final class _FireViewState extends State<FireView> with FireViewMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

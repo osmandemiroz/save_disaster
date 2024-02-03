@@ -4,7 +4,7 @@ import 'package:save_disaster/feature/avalanche/avalanche_view_mixin.dart';
 
 ///avalanche view of the app
 @RoutePage()
-class AvalancheView extends StatefulWidget {
+final class AvalancheView extends StatefulWidget {
   ///avalanche view constructor
   const AvalancheView({super.key});
 
@@ -12,7 +12,8 @@ class AvalancheView extends StatefulWidget {
   State<AvalancheView> createState() => _AvalancheViewState();
 }
 
-class _AvalancheViewState extends State<AvalancheView> with AvalancheViewMixin {
+final class _AvalancheViewState extends State<AvalancheView>
+    with AvalancheViewMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

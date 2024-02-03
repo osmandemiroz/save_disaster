@@ -15,7 +15,7 @@ final class ArticleView extends StatefulWidget {
   State<ArticleView> createState() => _ArticleViewState();
 }
 
-class _ArticleViewState extends State<ArticleView> {
+final class _ArticleViewState extends State<ArticleView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -5,7 +5,7 @@ import 'package:save_disaster/feature/blood_donation/blood_donation_view_mixin.d
 
 ///MeetingPoint view
 @RoutePage()
-class BloodDonationView extends StatefulWidget {
+final class BloodDonationView extends StatefulWidget {
   ///MeetingPoint view constructor
   const BloodDonationView({super.key});
 
@@ -13,7 +13,7 @@ class BloodDonationView extends StatefulWidget {
   State<BloodDonationView> createState() => _BloodDonationViewState();
 }
 
-class _BloodDonationViewState extends State<BloodDonationView>
+final class _BloodDonationViewState extends State<BloodDonationView>
     with BloodDonationViewMixin {
   @override
   Widget build(BuildContext context) {

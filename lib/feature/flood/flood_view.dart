@@ -4,7 +4,7 @@ import 'package:save_disaster/feature/flood/flood_view_mixin.dart';
 
 ///Flood view of the app
 @RoutePage()
-class FloodView extends StatefulWidget {
+final class FloodView extends StatefulWidget {
   ///Flood view constructor
   const FloodView({super.key});
 
@@ -12,7 +12,7 @@ class FloodView extends StatefulWidget {
   State<FloodView> createState() => _FloodViewState();
 }
 
-class _FloodViewState extends State<FloodView> with FloodViewMixin {
+final class _FloodViewState extends State<FloodView> with FloodViewMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

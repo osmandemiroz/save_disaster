@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 ///FloodPrepare view
-class FloodPrepareView extends StatefulWidget {
+final class FloodPrepareView extends StatefulWidget {
   ///FloodPrepare view constructor
   const FloodPrepareView({super.key});
 
@@ -9,7 +9,7 @@ class FloodPrepareView extends StatefulWidget {
   State<FloodPrepareView> createState() => _FloodPrepareViewState();
 }
 
-class _FloodPrepareViewState extends State<FloodPrepareView> {
+final class _FloodPrepareViewState extends State<FloodPrepareView> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(

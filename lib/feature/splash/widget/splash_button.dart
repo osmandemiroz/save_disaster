@@ -3,7 +3,7 @@ import 'package:kartal/kartal.dart';
 import 'package:save_disaster/product/gen/index.dart';
 
 /// widget
-class SplashButton extends StatefulWidget {
+final class SplashButton extends StatefulWidget {
   ///next button constructor
   const SplashButton({required this.text, required this.onTap, super.key});
 
@@ -17,7 +17,7 @@ class SplashButton extends StatefulWidget {
   State<SplashButton> createState() => _SplashButtonState();
 }
 
-class _SplashButtonState extends State<SplashButton> {
+final class _SplashButtonState extends State<SplashButton> {
   @override
   Widget build(BuildContext context) {
     return Column(

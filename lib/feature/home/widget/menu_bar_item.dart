@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 
 ///MenuBarItem of home page
-class MenuBarItem extends StatelessWidget {
+final class MenuBarItem extends StatelessWidget {
   ///MenuBarItem constructor
   const MenuBarItem({
     required this.onTap,

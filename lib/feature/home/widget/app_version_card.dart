@@ -3,7 +3,7 @@ import 'package:kartal/kartal.dart';
 import 'package:save_disaster/product/gen/index.dart';
 
 ///AppVersionCard of home page
-class AppVersionCard extends StatelessWidget {
+final class AppVersionCard extends StatelessWidget {
   ///AppVersionCard constructor
   const AppVersionCard({
     required this.appName,

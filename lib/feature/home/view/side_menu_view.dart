@@ -8,7 +8,7 @@ import 'package:save_disaster/product/navigation/app_router.dart';
 
 ///SideBarView of home page
 @RoutePage()
-class SideBarView extends StatefulWidget {
+final class SideBarView extends StatefulWidget {
   ///SideBarView constructor
   const SideBarView({super.key});
 
@@ -16,7 +16,7 @@ class SideBarView extends StatefulWidget {
   State<SideBarView> createState() => _SideBarViewState();
 }
 
-class _SideBarViewState extends State<SideBarView> {
+final class _SideBarViewState extends State<SideBarView> {
   final String appVersion = '1.0.0';
   final String appName = 'SaveDisaster';
   @override

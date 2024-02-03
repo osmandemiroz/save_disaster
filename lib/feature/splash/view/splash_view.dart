@@ -9,7 +9,7 @@ import 'package:save_disaster/product/navigation/app_router.dart';
 
 ///splash view of a splash screen
 @RoutePage()
-class SplashView extends StatefulWidget {
+final class SplashView extends StatefulWidget {
   ///splash view constructor
   const SplashView({
     super.key,
@@ -19,7 +19,7 @@ class SplashView extends StatefulWidget {
   State<SplashView> createState() => _SplashViewState();
 }
 
-class _SplashViewState extends State<SplashView> {
+final class _SplashViewState extends State<SplashView> {
   ///dot index of the splash screen
   ValueNotifier<int> currentIndex = ValueNotifier(0);
 

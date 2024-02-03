@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:save_disaster/product/gen/index.dart';
 
 ///Onboarding contents model
-class OnboardingContents {
+final class OnboardingContents {
   Widget image;
   String title;
   String description;
@@ -16,7 +16,7 @@ class OnboardingContents {
 
 List<OnboardingContents> contents = [
   OnboardingContents(
-    image: Assets.icons.icAppLogo.svg(),
+    image: Assets.images.imgWorld.image(),
     title: 'Welcome to the Save Disaster App',
     description: 'This is the first page of the onboarding screen',
   ),

@@ -4,7 +4,7 @@ import 'package:save_disaster/feature/earthquake/earthquakeviewmixin.dart';
 
 ///earthquake view of the app
 @RoutePage()
-class EarthquakeView extends StatefulWidget {
+final class EarthquakeView extends StatefulWidget {
   ///earthquake view constructor
 
   const EarthquakeView({super.key});
@@ -13,7 +13,7 @@ class EarthquakeView extends StatefulWidget {
   State<EarthquakeView> createState() => _EarthquakeViewState();
 }
 
-class _EarthquakeViewState extends State<EarthquakeView>
+final class _EarthquakeViewState extends State<EarthquakeView>
     with EarthquakeViewMixin {
   @override
   Widget build(BuildContext context) {

@@ -7,7 +7,7 @@ import 'package:save_disaster/feature/meeting_point/meeting_point_view_mixin.dar
 
 ///MeetingPoint view
 @RoutePage()
-class MeetingPointView extends StatefulWidget {
+final class MeetingPointView extends StatefulWidget {
   ///MeetingPoint view constructor
   const MeetingPointView({super.key});
 
@@ -15,7 +15,7 @@ class MeetingPointView extends StatefulWidget {
   State<MeetingPointView> createState() => _MeetingPointViewState();
 }
 
-class _MeetingPointViewState extends State<MeetingPointView>
+final class _MeetingPointViewState extends State<MeetingPointView>
     with MeetingPointViewMixin {
   @override
   Widget build(BuildContext context) {

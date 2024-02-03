@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 ///FirePass view
-class FirePassView extends StatefulWidget {
+final class FirePassView extends StatefulWidget {
   ///FirePass view constructor
   const FirePassView({super.key});
 
@@ -9,7 +9,7 @@ class FirePassView extends StatefulWidget {
   State<FirePassView> createState() => _FirePassViewState();
 }
 
-class _FirePassViewState extends State<FirePassView> {
+final class _FirePassViewState extends State<FirePassView> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(

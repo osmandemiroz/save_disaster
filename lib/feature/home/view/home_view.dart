@@ -13,7 +13,7 @@ import 'package:save_disaster/product/gen/index.dart';
 /// This is the home view of the app
 /// It contains the side menu and the content
 @RoutePage()
-class HomeView extends StatefulWidget {
+final class HomeView extends StatefulWidget {
   /// This widget is constructor for the home view
   const HomeView({super.key});
 
@@ -21,7 +21,7 @@ class HomeView extends StatefulWidget {
   State<HomeView> createState() => _HomeViewState();
 }
 
-class _HomeViewState extends State<HomeView>
+final class _HomeViewState extends State<HomeView>
     with SingleTickerProviderStateMixin, HomeViewMixin {
   ///isSideBarOpened value of the home view
   bool isSideBarClosed = true;
@@ -49,7 +49,7 @@ class _HomeViewState extends State<HomeView>
     _scaleAnimation = Tween<double>(begin: 1, end: 0.8).animate(
       CurvedAnimation(
         parent: _animationController,
-        curve: Curves.fastOutSlowIn,
+        curve: Curves.easeOutSine,
       ),
     );
     super.initState();
@@ -135,18 +135,26 @@ class _HomeViewState extends State<HomeView>
         child: SingleChildScrollView(
           physics: const ClampingScrollPhysics(),
           padding: context.padding.horizontalLow,
-          child: ListView.builder(
-            physics: const NeverScrollableScrollPhysics(),
-            shrinkWrap: true,
-            itemCount: articles.length,
-            itemBuilder: (_, index) {
-              return BlogTile(
-                desc: articles[index].description!,
-                imageUrl: articles[index].urlToImage!,
-                title: articles[index].title!,
-                url: articles[index].url!,
-              );
-            },
+          child: Column(
+            children: [
+              Assets.lottie.animWorld.lottie(
+                width: context.sized.width,
+                height: context.sized.height * 0.3,
+              ),
+              ListView.builder(
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                itemCount: articles.length,
+                itemBuilder: (_, index) {
+                  return BlogTile(
+                    desc: articles[index].description!,
+                    imageUrl: articles[index].urlToImage!,
+                    title: articles[index].title!,
+                    url: articles[index].url!,
+                  );
+                },
+              ),
+            ],
           ),
         ),
       ),
