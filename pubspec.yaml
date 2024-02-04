@@ -64,5 +64,5 @@ flutter:
   assets:
     - assets/colors/
     - assets/lottie/
-    - assets/icons/
     - assets/images/
+    - assets/pdfs/
