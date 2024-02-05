@@ -6,7 +6,7 @@ import 'package:save_disaster/product/service/news.dart';
 ///home view mixin
 mixin HomeViewMixin on State<HomeView> {
   ///homeView title
-  final String homeViewTitle = 'Home';
+  final String homeViewTitle = 'SaveDisaster';
 
   ///articles
   List<Article> articles = [];

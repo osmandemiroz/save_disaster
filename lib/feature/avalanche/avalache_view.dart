@@ -17,6 +17,7 @@ final class _AvalancheViewState extends State<AvalancheView>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       bottomNavigationBar: BottomNavigationBar(
         items: bottomNavigationBarItems,
         currentIndex: currentPageIndex,

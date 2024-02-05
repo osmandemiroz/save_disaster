@@ -80,6 +80,12 @@ class $AssetsLottieGen {
 class $AssetsPdfsGen {
   const $AssetsPdfsGen();
 
+  /// File path: assets/pdfs/avalanchereaction.pdf
+  String get avalanchereaction => 'assets/pdfs/avalanchereaction.pdf';
+
+  /// File path: assets/pdfs/avalanchesurviving.pdf
+  String get avalanchesurviving => 'assets/pdfs/avalanchesurviving.pdf';
+
   /// File path: assets/pdfs/earthquakeprepare.pdf
   String get earthquakeprepare => 'assets/pdfs/earthquakeprepare.pdf';
 
@@ -106,6 +112,8 @@ class $AssetsPdfsGen {
 
   /// List of all assets
   List<String> get values => [
+        avalanchereaction,
+        avalanchesurviving,
         earthquakeprepare,
         earthquakerecover,
         earthquakesurvive,

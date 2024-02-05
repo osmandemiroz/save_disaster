@@ -50,6 +50,8 @@ final class _SplashViewState extends State<SplashView> {
               onPageChanged: (value) => currentIndex.value = value,
               itemBuilder: (_, index) {
                 return Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Expanded(
                       flex: 5,
@@ -62,20 +64,23 @@ final class _SplashViewState extends State<SplashView> {
                     ),
                     Expanded(
                       flex: 2,
-                      child: Column(
-                        children: [
-                          Text(
-                            contents[index].title,
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: context.sized.height * 0.02,
+                      child: Padding(
+                        padding: context.padding.medium,
+                        child: Column(
+                          children: [
+                            Text(
+                              contents[index].title,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: context.sized.height * 0.02,
+                              ),
                             ),
-                          ),
-                          SizedBox(
-                            height: context.sized.height * 0.01,
-                          ),
-                          Text(contents[index].description),
-                        ],
+                            SizedBox(
+                              height: context.sized.height * 0.01,
+                            ),
+                            Text(contents[index].description),
+                          ],
+                        ),
                       ),
                     ),
                   ],

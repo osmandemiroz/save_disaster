@@ -17,19 +17,19 @@ final class SideBarView extends StatefulWidget {
 }
 
 final class _SideBarViewState extends State<SideBarView> {
-  final String appVersion = '1.0.0';
-  final String appName = 'SaveDisaster';
+  final String _appVersion = '1.0.0';
+  final String _appName = 'SaveDisaster';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         width: context.sized.width * 0.8,
         height: double.infinity,
-        color: ColorName.backgroundColorPrimary,
+        color: Theme.of(context).scaffoldBackgroundColor,
         child: SafeArea(
           child: Column(
             children: [
-              AppVersionCard(appName: appName, appVersion: appVersion),
+              AppVersionCard(appName: _appName, appVersion: _appVersion),
               const Divider(),
               MenuBarItem(
                 onTap: () => context.router.push(const EarthquakeRoute()),

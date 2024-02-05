@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
-import 'package:save_disaster/product/gen/index.dart';
 
 ///AppVersionCard of home page
 final class AppVersionCard extends StatelessWidget {
@@ -26,7 +25,7 @@ final class AppVersionCard extends StatelessWidget {
       title: Text(
         appName,
         style: TextStyle(
-          color: ColorName.textColorPrimary,
+          color: Theme.of(context).primaryColor,
           fontWeight: FontWeight.bold,
           fontSize: context.sized.height * 0.02,
         ),
@@ -34,7 +33,7 @@ final class AppVersionCard extends StatelessWidget {
       subtitle: Text(
         appVersion,
         style: TextStyle(
-          color: ColorName.textColorSecondary,
+          color: Theme.of(context).dividerColor,
           fontSize: context.sized.height * 0.015,
         ),
       ),

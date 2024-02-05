@@ -64,7 +64,7 @@ final class _HomeViewState extends State<HomeView>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorName.backgroundColorPrimary,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: Stack(
         children: [
           AnimatedPositioned(

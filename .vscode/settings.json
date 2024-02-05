@@ -31,6 +31,8 @@
     "editor.inlineSuggest.enabled": true,
     "cSpell.words": [
         "appspot",
+        "avalanchereaction",
+        "avalanchesurviving",
         "earthquakeprepare",
         "earthquakerecover",
         "earthquakesurvive",
@@ -51,6 +53,7 @@
         "pdfviewer",
         "placemark",
         "syncfusion",
+        "TURKIYE",
         "vsync"
     ],
     "java.configuration.updateBuildConfiguration": "interactive"
