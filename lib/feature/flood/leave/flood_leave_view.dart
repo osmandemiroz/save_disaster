@@ -1,21 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:save_disaster/product/gen/index.dart';
+import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 ///FloodLeave view
-final class FloodLeaveView extends StatefulWidget {
+final class FloodLeaveView extends StatelessWidget {
   ///FloodLeave view constructor
   const FloodLeaveView({super.key});
 
   @override
-  State<FloodLeaveView> createState() => _FloodLeaveViewState();
-}
-
-final class _FloodLeaveViewState extends State<FloodLeaveView> {
-  @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('Leave'),
-      ),
+    return Center(
+      child: SfPdfViewer.asset(Assets.pdfs.floodleave),
     );
   }
 }

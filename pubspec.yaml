@@ -20,6 +20,9 @@ dependencies:
   kartal: ^3.5.0
   cached_network_image: ^3.3.1
 
+  #PDF VIEWER
+  syncfusion_flutter_pdfviewer: ^24.2.3
+
   #NAVIGATION
   auto_route: ^7.8.4
 

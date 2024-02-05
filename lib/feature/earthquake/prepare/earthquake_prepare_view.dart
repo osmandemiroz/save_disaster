@@ -1,21 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:save_disaster/product/gen/index.dart';
+import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 ///Preparation view
-final class EarthquakePrepareView extends StatefulWidget {
+final class EarthquakePrepareView extends StatelessWidget {
   ///preparation view constructor
   const EarthquakePrepareView({super.key});
 
   @override
-  State<EarthquakePrepareView> createState() => _EarthquakePrepareViewState();
-}
-
-final class _EarthquakePrepareViewState extends State<EarthquakePrepareView> {
-  @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('Prepare'),
-      ),
+    return Center(
+      child: SfPdfViewer.asset(Assets.pdfs.earthquakeprepare),
     );
   }
 }

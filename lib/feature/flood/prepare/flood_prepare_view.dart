@@ -1,21 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:save_disaster/product/gen/index.dart';
+import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 ///FloodPrepare view
-final class FloodPrepareView extends StatefulWidget {
+final class FloodPrepareView extends StatelessWidget {
   ///FloodPrepare view constructor
   const FloodPrepareView({super.key});
 
   @override
-  State<FloodPrepareView> createState() => _FloodPrepareViewState();
-}
-
-final class _FloodPrepareViewState extends State<FloodPrepareView> {
-  @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('Prepare'),
-      ),
+    return Center(
+      child: SfPdfViewer.asset(Assets.pdfs.floodprepare),
     );
   }
 }

@@ -31,8 +31,16 @@
     "editor.inlineSuggest.enabled": true,
     "cSpell.words": [
         "appspot",
+        "earthquakeprepare",
+        "earthquakerecover",
+        "earthquakesurvive",
         "firebaseapp",
+        "firepass",
+        "firerace",
         "firestore",
+        "floodanticipate",
+        "floodleave",
+        "floodprepare",
         "GDSC",
         "Geolocator",
         "htmls",
@@ -40,7 +48,9 @@
         "kartal",
         "PBKTY",
         "pdfs",
+        "pdfviewer",
         "placemark",
+        "syncfusion",
         "vsync"
     ],
     "java.configuration.updateBuildConfiguration": "interactive"

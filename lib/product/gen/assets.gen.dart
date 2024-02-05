@@ -77,12 +77,53 @@ class $AssetsLottieGen {
   List<LottieGenImage> get values => [animWorld];
 }
 
+class $AssetsPdfsGen {
+  const $AssetsPdfsGen();
+
+  /// File path: assets/pdfs/earthquakeprepare.pdf
+  String get earthquakeprepare => 'assets/pdfs/earthquakeprepare.pdf';
+
+  /// File path: assets/pdfs/earthquakerecover.pdf
+  String get earthquakerecover => 'assets/pdfs/earthquakerecover.pdf';
+
+  /// File path: assets/pdfs/earthquakesurvive.pdf
+  String get earthquakesurvive => 'assets/pdfs/earthquakesurvive.pdf';
+
+  /// File path: assets/pdfs/firepass.pdf
+  String get firepass => 'assets/pdfs/firepass.pdf';
+
+  /// File path: assets/pdfs/firerace.pdf
+  String get firerace => 'assets/pdfs/firerace.pdf';
+
+  /// File path: assets/pdfs/floodanticipate.pdf
+  String get floodanticipate => 'assets/pdfs/floodanticipate.pdf';
+
+  /// File path: assets/pdfs/floodleave.pdf
+  String get floodleave => 'assets/pdfs/floodleave.pdf';
+
+  /// File path: assets/pdfs/floodprepare.pdf
+  String get floodprepare => 'assets/pdfs/floodprepare.pdf';
+
+  /// List of all assets
+  List<String> get values => [
+        earthquakeprepare,
+        earthquakerecover,
+        earthquakesurvive,
+        firepass,
+        firerace,
+        floodanticipate,
+        floodleave,
+        floodprepare
+      ];
+}
+
 class Assets {
   Assets._();
 
   static const $AssetsColorsGen colors = $AssetsColorsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsLottieGen lottie = $AssetsLottieGen();
+  static const $AssetsPdfsGen pdfs = $AssetsPdfsGen();
 }
 
 class AssetGenImage {

@@ -14,7 +14,7 @@ class News {
   ///get news from the api
   Future<void> getNews() async {
     final url =
-        '${Env.newsBaseUrl}&from=${DateTime.now().year}-${DateTime.now().month}-${DateTime.now().day}&sortBy=publishedAt&apiKey=${Env.newsApiKey}';
+        'https://newsapi.org/v2/everything?q=climate&apiKey=${Env.newsApiKey}';
 
     final response = await http.get(Uri.parse(url));
 
