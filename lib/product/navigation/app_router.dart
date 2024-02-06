@@ -3,6 +3,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:save_disaster/feature/avalanche/avalache_view.dart';
 import 'package:save_disaster/feature/blood_donation/blood_donation_view.dart';
+import 'package:save_disaster/feature/chat_bot/chat_bot_view.dart';
 import 'package:save_disaster/feature/earthquake/earthquake_view.dart';
 import 'package:save_disaster/feature/fire/fire_view.dart';
 import 'package:save_disaster/feature/flood/flood_view.dart';
@@ -58,6 +59,9 @@ final class AppRouter extends _$AppRouter {
         ),
         AutoRoute(
           page: BloodDonationRoute.page,
+        ),
+        AutoRoute(
+          page: ChatBotRoute.page,
         ),
       ];
 }

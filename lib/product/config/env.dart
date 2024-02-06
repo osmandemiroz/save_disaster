@@ -33,8 +33,13 @@ abstract class Env {
   ///news api key
   static final String newsApiKey = _Env.newsApiKey;
 
-  @EnviedField(varName: 'NEWS_BASE_URL')
+  @EnviedField(varName: 'CHAT_BOT_API_KEY')
 
-  ///news base url
-  static final String newsBaseUrl = _Env.newsBaseUrl;
+  ///chat bot api key
+  static final String chatBotApiKey = _Env.chatBotApiKey;
+
+  @EnviedField(varName: 'CHAT_BOT_BASE_URL')
+
+  ///chat bot base url
+  static final String chatBotBaseUrl = _Env.chatBotBaseUrl;
 }

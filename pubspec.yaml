@@ -19,6 +19,8 @@ dependencies:
   #UTILITIES
   kartal: ^3.5.0
   cached_network_image: ^3.3.1
+  flutter_markdown: ^0.6.18+2
+  image_picker: ^1.0.5
 
   #PDF VIEWER
   syncfusion_flutter_pdfviewer: ^24.2.3
@@ -41,6 +43,9 @@ dependencies:
   #WEBVIEW
   url_launcher: ^6.2.4
   webview_flutter: ^3.0.1
+
+  #CHAT_BOT_AI
+  flutter_gemini: ^2.0.1
 
 dev_dependencies:
   flutter_test:

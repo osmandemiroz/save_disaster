@@ -22,28 +22,10 @@ List<OnboardingContents> contents = [
         'This app makes it easy for people to save their lives and protect themselves from disasters.',
   ),
   OnboardingContents(
-    image: Assets.images.icEarthquake.image(),
-    title: 'Earthquake disaster awareness ',
+    image: Assets.images.icDisasters.image(),
+    title: 'Natural disaster awareness ',
     description:
-        'In this app we will help you to understand the situation of earthquake.In 3 steps (Prepare, Survive, Recover) we will help you to understand the situation of earthquake.',
-  ),
-  OnboardingContents(
-    image: Assets.images.icFlood.image(),
-    title: 'Flood disaster awareness',
-    description:
-        'In this app we will help you to understand the situation of flood.In 3 steps (Anticipate, Prepare, Leave) we will help you to understand the situation of flood.',
-  ),
-  OnboardingContents(
-    image: Assets.images.icFire.image(),
-    title: 'Fire disaster awareness',
-    description:
-        'In this app we will help you to understand the situation of fire.In 2 steps (Race, Pass) we will help you to understand the situation of fire.',
-  ),
-  OnboardingContents(
-    image: Assets.images.icAvalanche.image(),
-    title: 'Avalanche disaster awareness',
-    description:
-        'In this app we will help you to understand the situation of avalanche.In 2 steps (Reaction, Surviving) we will help you to understand the situation of avalanche.',
+        'In this app we will help you to understand the situation of natural disaster.Like earthquake, flood, fire and fire.',
   ),
   OnboardingContents(
     image: Assets.images.icSos.image(),

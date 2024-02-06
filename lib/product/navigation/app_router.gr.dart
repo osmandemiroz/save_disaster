@@ -27,6 +27,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const BloodDonationView(),
       );
     },
+    ChatBotRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ChatBotView(),
+      );
+    },
     EarthquakeRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -102,6 +108,20 @@ class BloodDonationRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'BloodDonationRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ChatBotView]
+class ChatBotRoute extends PageRouteInfo<void> {
+  const ChatBotRoute({List<PageRouteInfo>? children})
+      : super(
+          ChatBotRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ChatBotRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

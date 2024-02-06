@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gemini/flutter_gemini.dart';
 import 'package:save_disaster/firebase_options.dart';
+import 'package:save_disaster/product/config/env.dart';
 
 ///this class used to initialize the starting process
 @immutable
@@ -14,5 +16,7 @@ final class ApplicationInitializer {
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
+
+    Gemini.init(apiKey: Env.chatBotApiKey);
   }
 }

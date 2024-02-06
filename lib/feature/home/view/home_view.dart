@@ -9,6 +9,7 @@ import 'package:save_disaster/feature/home/view/home_view_mixin.dart';
 import 'package:save_disaster/feature/home/view/side_menu_view.dart';
 import 'package:save_disaster/feature/home/widget/blog_tile_widget.dart';
 import 'package:save_disaster/product/gen/index.dart';
+import 'package:save_disaster/product/navigation/app_router.dart';
 
 /// This is the home view of the app
 /// It contains the side menu and the content
@@ -137,6 +138,14 @@ final class _HomeViewState extends State<HomeView>
           padding: context.padding.horizontalLow,
           child: Column(
             children: [
+              GestureDetector(
+                onTap: () => context.router.push(const ChatBotRoute()),
+                child: Container(
+                  width: context.sized.width,
+                  height: context.sized.height * 0.3,
+                  color: Colors.red,
+                ),
+              ),
               Assets.lottie.animWorld.lottie(
                 width: context.sized.width,
                 height: context.sized.height * 0.3,
