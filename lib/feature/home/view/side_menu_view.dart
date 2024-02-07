@@ -2,8 +2,10 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 import 'package:save_disaster/feature/home/widget/menu_bar_item.dart';
+import 'package:save_disaster/product/constants/app_constants.dart';
 import 'package:save_disaster/product/gen/index.dart';
 import 'package:save_disaster/product/navigation/app_router.dart';
+import 'package:save_disaster/product/widget/big_text.dart';
 
 ///SideBarView of home page
 @RoutePage()
@@ -26,10 +28,19 @@ final class _SideBarViewState extends State<SideBarView> {
         child: SafeArea(
           child: Column(
             children: [
-              SizedBox(
-                height: context.sized.height * 0.08,
-                width: context.sized.width * 0.6,
-                child: Assets.images.icSaveDisaster.image(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: context.sized.height * 0.05,
+                    width: context.sized.width * 0.15,
+                    child: Assets.images.icSaveDisaster.image(),
+                  ),
+                  const BigText(
+                    title: AppConstants.APP_NAME,
+                  ),
+                ],
               ),
               const Divider(),
               MenuBarItem(

@@ -54,7 +54,7 @@ final class _SplashViewState extends State<SplashView> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Expanded(
-                      flex: 6,
+                      flex: 5,
                       child: Padding(
                         padding: context.padding.high,
                         child: Center(

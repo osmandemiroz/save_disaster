@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:kartal/kartal.dart';
 
 ///DescText widget
@@ -18,11 +19,16 @@ final class DescText extends StatelessWidget {
       description,
       overflow: TextOverflow.fade,
       maxLines: 7,
-      style: TextStyle(
+      style: GoogleFonts.poppins(
         color: color,
-        fontSize: context.sized.lowValue * 1.75,
-        fontWeight: FontWeight.w300,
-        fontStyle: FontStyle.normal,
+        fontSize: context.sized.height * 0.02,
+        fontWeight: FontWeight.w400,
+        shadows: [
+          Shadow(
+            blurRadius: 1,
+            color: Theme.of(context).unselectedWidgetColor,
+          ),
+        ],
       ),
     );
   }

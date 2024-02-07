@@ -21,6 +21,7 @@ dependencies:
   cached_network_image: ^3.3.1
   flutter_markdown: ^0.6.18+2
   image_picker: ^1.0.5
+  google_fonts: ^6.1.0
 
   #PDF VIEWER
   syncfusion_flutter_pdfviewer: ^24.2.3

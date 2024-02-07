@@ -16,7 +16,7 @@ final class OnboardingContents {
 
 List<OnboardingContents> contents = [
   OnboardingContents(
-    image: Assets.images.imgWorld.image(),
+    image: Assets.images.icSaveDisaster.image(),
     title: 'Welcome to the Save Disaster App',
     description:
         'This app makes it easy for people to save their lives and protect themselves from disasters.',

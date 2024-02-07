@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
+import 'package:save_disaster/product/widget/big_text.dart';
 
 ///MenuBarItem of home page
 final class MenuBarItem extends StatelessWidget {
@@ -24,7 +25,7 @@ final class MenuBarItem extends StatelessWidget {
     return Stack(
       children: [
         Positioned(
-          height: context.sized.height * 0.08,
+          height: context.sized.height * 0.07,
           width: context.sized.width * 0.8,
           child: Container(
             decoration: BoxDecoration(
@@ -36,16 +37,12 @@ final class MenuBarItem extends StatelessWidget {
           ),
         ),
         ListTile(
-          contentPadding: context.padding.verticalLow,
           onTap: onTap,
           leading: SizedBox(
             height: context.sized.height * 0.06,
             child: icon,
           ),
-          title: Text(
-            menuName,
-            style: TextStyle(fontSize: context.sized.height * 0.025),
-          ),
+          title: BigText(title: menuName),
         ),
       ],
     );

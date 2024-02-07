@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:save_disaster/product/init/application_initializer.dart';
 import 'package:save_disaster/product/init/theme/color_schemes.g.dart';
 import 'package:save_disaster/product/navigation/app_router.dart';
@@ -38,10 +39,16 @@ final class _MyApp extends StatelessWidget {
     return MaterialApp.router(
       routerConfig: AppRouter(showSplash: showSplash).config(),
       theme: ThemeData(
+        textTheme: GoogleFonts.aBeeZeeTextTheme(
+          const TextTheme(),
+        ),
         useMaterial3: true,
         colorScheme: ProductColorSchemes.lightColorScheme,
       ),
       darkTheme: ThemeData(
+        textTheme: GoogleFonts.aBeeZeeTextTheme(
+          const TextTheme(),
+        ),
         useMaterial3: true,
         colorScheme: ProductColorSchemes.darkColorScheme,
       ),

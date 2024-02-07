@@ -23,42 +23,17 @@ final class HomeView extends StatefulWidget {
 
 final class _HomeViewState extends State<HomeView>
     with SingleTickerProviderStateMixin, HomeViewMixin {
-  ///isSideBarOpened value of the home view
-  bool isSideBarClosed = true;
-  late AnimationController _animationController;
-
-  late Animation<double> _animation;
-  late Animation<double> _scaleAnimation;
-
   @override
   void initState() {
     getNews();
-    _animationController = AnimationController(
+    animationController = AnimationController(
       vsync: this,
       duration: context.duration.durationLow,
     )..addListener(() {
         setState(() {});
       });
-
-    _animation = Tween<double>(begin: 0, end: 1).animate(
-      CurvedAnimation(
-        parent: _animationController,
-        curve: Curves.fastOutSlowIn,
-      ),
-    );
-    _scaleAnimation = Tween<double>(begin: 1, end: 0.8).animate(
-      CurvedAnimation(
-        parent: _animationController,
-        curve: Curves.easeOutSine,
-      ),
-    );
+    animate();
     super.initState();
-  }
-
-  @override
-  void dispose() {
-    _animationController.dispose();
-    super.dispose();
   }
 
   @override
@@ -79,16 +54,16 @@ final class _HomeViewState extends State<HomeView>
             alignment: Alignment.center,
             transform: Matrix4.identity()
               ..setEntry(3, 2, 0.001)
-              ..rotateY(_animation.value - 30 * _animation.value * pi / 180),
+              ..rotateY(animation.value - 30 * animation.value * pi / 180),
             child: Transform.translate(
-              offset: Offset(_animation.value * context.sized.width * 0.7, 0),
+              offset: Offset(animation.value * context.sized.width * 0.7, 0),
               child: Transform.scale(
-                scale: _scaleAnimation.value,
+                scale: scaleAnimation.value,
                 child: ClipRRect(
                   borderRadius: isSideBarClosed
                       ? BorderRadius.zero
                       : context.border.highBorderRadius,
-                  child: mainHomeView(context),
+                  child: _mainHomeView(context),
                 ),
               ),
             ),
@@ -98,7 +73,7 @@ final class _HomeViewState extends State<HomeView>
     );
   }
 
-  Scaffold mainHomeView(BuildContext context) {
+  Scaffold _mainHomeView(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       extendBody: true,
@@ -108,9 +83,9 @@ final class _HomeViewState extends State<HomeView>
         leading: IconButton(
           onPressed: () {
             if (isSideBarClosed) {
-              _animationController.forward();
+              animationController.forward();
             } else {
-              _animationController.reverse();
+              animationController.reverse();
             }
             isSideBarClosed = !isSideBarClosed;
           },
@@ -156,6 +131,7 @@ final class _HomeViewState extends State<HomeView>
               ),
               SizedBox(height: context.sized.height * 0.1),
               const BigText(title: 'Latest News'),
+              const Divider(),
               ListView.builder(
                 physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,

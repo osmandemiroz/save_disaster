@@ -3,6 +3,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:save_disaster/feature/chat_bot/chat_bot_view_mixin.dart';
+import 'package:save_disaster/product/widget/big_text.dart';
 
 ///ChatBot View of the app
 @RoutePage()
@@ -20,30 +21,16 @@ class _ChatBotViewState extends State<ChatBotView> with ChatBotViewMixin {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
-        title: Text(
-          selectedItem == 0 ? 'Gemini' : sections[selectedItem].title,
-        ),
-        actions: [
-          PopupMenuButton<int>(
-            initialValue: selectedItem,
-            onSelected: (value) => setState(() => selectedItem = value),
-            itemBuilder: (context) => sections.map((e) {
-              return PopupMenuItem<int>(value: e.index, child: Text(e.title));
-            }).toList(),
-            child: const Icon(Icons.more_vert_rounded),
-          ),
-        ],
+        title: BigText(title: section.title),
       ),
-      body: IndexedStack(
-        index: selectedItem,
-        children: sections.map((e) => e.widget).toList(),
-      ),
+      body: section.widget,
     );
   }
 }
 
-class SectionItem {
-  SectionItem(this.index, this.title, this.widget);
+@immutable
+final class SectionItem {
+  const SectionItem(this.index, this.title, this.widget);
   final int index;
   final String title;
   final Widget widget;

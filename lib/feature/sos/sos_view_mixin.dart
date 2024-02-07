@@ -22,7 +22,7 @@ mixin SosViewMixin on State<SosView> {
   final ValueNotifier<bool> isButtonPressed = ValueNotifier<bool>(false);
 
   ///emergency color
-  final Color emergencyColor = Colors.redAccent;
+  final Color emergencyColor = Colors.red.shade700;
 
   ///name controller
   TextEditingController nameController = TextEditingController();

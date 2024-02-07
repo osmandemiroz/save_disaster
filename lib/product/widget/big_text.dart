@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:kartal/kartal.dart';
 
 ///BigText widget
@@ -17,21 +18,16 @@ final class BigText extends StatelessWidget {
     return Text(
       title,
       maxLines: 2,
-      style: TextStyle(
-        overflow: TextOverflow.ellipsis,
+      style: GoogleFonts.agdasima(
         color: color,
-        fontSize: context.sized.lowValue * 3,
-        fontWeight: FontWeight.w300,
-        fontStyle: FontStyle.normal,
+        fontSize: context.sized.height * 0.03,
+        fontWeight: FontWeight.bold,
         shadows: [
           Shadow(
-            color:
-                Theme.of(context).textTheme.bodyMedium!.color!.withOpacity(0.4),
-            offset: const Offset(1, 1),
-            blurRadius: context.sized.lowValue,
+            blurRadius: 1,
+            color: Theme.of(context).unselectedWidgetColor,
           ),
         ],
-        wordSpacing: context.sized.lowValue * 0.1,
       ),
     );
   }

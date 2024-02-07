@@ -1,6 +1,5 @@
 // ignore_for_file: inference_failure_on_untyped_parameter
 
-import 'dart:developer';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
@@ -11,6 +10,7 @@ import 'package:kartal/kartal.dart';
 import 'package:save_disaster/feature/chat_bot/widgets/chat_input_box.dart';
 import 'package:save_disaster/feature/chat_bot/widgets/item_image_view.dart';
 import 'package:save_disaster/product/gen/index.dart';
+import 'package:save_disaster/product/widget/desc_text.dart';
 
 ///SectionTextInputStream
 class SectionTextStreamInput extends StatefulWidget {
@@ -52,7 +52,7 @@ class _SectionTextInputStreamState extends State<SectionTextStreamInput> {
                 // result = null;
               });
             },
-            child: Text('search: $searchedText'),
+            child: DescText(description: 'searched: $searchedText'),
           ),
         Expanded(
           child: GeminiResponseTypeView(
@@ -67,7 +67,9 @@ class _SectionTextInputStreamState extends State<SectionTextStreamInput> {
                   selectable: true,
                 );
               } else {
-                return const Center(child: Text('Search something!'));
+                return const Center(
+                  child: DescText(description: 'Search something'),
+                );
               }
             },
           ),
@@ -124,7 +126,7 @@ class _SectionTextInputStreamState extends State<SectionTextStreamInput> {
                   finishReason = 'Finish reason is `RECITATION`';
                 }
               }).onError((e) {
-                log('streamGenerateContent error', error: e);
+                throw Exception(e);
               });
             }
           },

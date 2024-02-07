@@ -67,8 +67,8 @@ final class _SosViewState extends State<SosView> with SosViewMixin {
                 child: ElevatedButton.icon(
                   style: ElevatedButton.styleFrom(
                     fixedSize: Size(
-                      context.sized.width * 0.3,
-                      context.sized.height * 0.08,
+                      context.sized.width * 0.5,
+                      context.sized.height * 0.06,
                     ),
                     backgroundColor: emergencyColor,
                   ),
@@ -85,9 +85,12 @@ final class _SosViewState extends State<SosView> with SosViewMixin {
                       initializeAddress();
                     }
                   },
-                  icon: const Icon(Icons.emergency),
-                  label: Text(
-                    buttonName,
+                  icon: const Icon(
+                    Icons.emergency_outlined,
+                  ),
+                  label: BigText(
+                    color: Theme.of(context).scaffoldBackgroundColor,
+                    title: buttonName,
                   ),
                 ),
               ),
