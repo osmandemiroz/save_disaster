@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
-import 'package:save_disaster/feature/home/widget/app_version_card.dart';
 import 'package:save_disaster/feature/home/widget/menu_bar_item.dart';
 import 'package:save_disaster/product/gen/index.dart';
 import 'package:save_disaster/product/navigation/app_router.dart';
@@ -17,8 +16,6 @@ final class SideBarView extends StatefulWidget {
 }
 
 final class _SideBarViewState extends State<SideBarView> {
-  final String _appVersion = '1.0.0';
-  final String _appName = 'SaveDisaster';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +26,11 @@ final class _SideBarViewState extends State<SideBarView> {
         child: SafeArea(
           child: Column(
             children: [
-              AppVersionCard(appName: _appName, appVersion: _appVersion),
+              SizedBox(
+                height: context.sized.height * 0.08,
+                width: context.sized.width * 0.6,
+                child: Assets.images.icSaveDisaster.image(),
+              ),
               const Divider(),
               MenuBarItem(
                 onTap: () => context.router.push(const EarthquakeRoute()),
@@ -83,6 +84,17 @@ final class _SideBarViewState extends State<SideBarView> {
                 icon: Assets.images.icBloodDonation.image(),
                 menuName: 'Blood Donation',
                 onTap: () => context.router.push(const BloodDonationRoute()),
+              ),
+              SizedBox(
+                height: context.sized.height * 0.02,
+              ),
+              MenuBarItem(
+                onTap: () => context.router.push(const ChatBotRoute()),
+                icon: Assets.images.icGemini.image(),
+                menuName: 'Chat Bot',
+              ),
+              SizedBox(
+                height: context.sized.height * 0.02,
               ),
             ],
           ),

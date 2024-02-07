@@ -54,6 +54,10 @@ class $AssetsImagesGen {
   AssetGenImage get icMeetingPoint =>
       const AssetGenImage('assets/images/ic_meeting_point.png');
 
+  /// File path: assets/images/ic_save_disaster.png
+  AssetGenImage get icSaveDisaster =>
+      const AssetGenImage('assets/images/ic_save_disaster.png');
+
   /// File path: assets/images/ic_sos.png
   AssetGenImage get icSos => const AssetGenImage('assets/images/ic_sos.png');
 
@@ -71,6 +75,7 @@ class $AssetsImagesGen {
         icFlood,
         icGemini,
         icMeetingPoint,
+        icSaveDisaster,
         icSos,
         imgWorld
       ];
@@ -83,12 +88,16 @@ class $AssetsLottieGen {
   LottieGenImage get animGemini =>
       const LottieGenImage('assets/lottie/anim_gemini.json');
 
+  /// File path: assets/lottie/anim_leaf.json
+  LottieGenImage get animLeaf =>
+      const LottieGenImage('assets/lottie/anim_leaf.json');
+
   /// File path: assets/lottie/anim_world.json
   LottieGenImage get animWorld =>
       const LottieGenImage('assets/lottie/anim_world.json');
 
   /// List of all assets
-  List<LottieGenImage> get values => [animGemini, animWorld];
+  List<LottieGenImage> get values => [animGemini, animLeaf, animWorld];
 }
 
 class $AssetsPdfsGen {

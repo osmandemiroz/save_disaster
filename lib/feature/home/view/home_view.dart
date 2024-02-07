@@ -8,6 +8,7 @@ import 'package:save_disaster/feature/home/view/side_menu_view.dart';
 import 'package:save_disaster/feature/home/widget/blog_tile_widget.dart';
 import 'package:save_disaster/product/gen/index.dart';
 import 'package:save_disaster/product/navigation/app_router.dart';
+import 'package:save_disaster/product/widget/app_logo.dart';
 import 'package:save_disaster/product/widget/big_text.dart';
 
 /// This is the home view of the app
@@ -103,8 +104,7 @@ final class _HomeViewState extends State<HomeView>
       extendBody: true,
       appBar: AppBar(
         elevation: 0,
-        centerTitle: true,
-        title: Text(homeViewTitle),
+        title: const AppLogo(),
         leading: IconButton(
           onPressed: () {
             if (isSideBarClosed) {
@@ -136,6 +136,7 @@ final class _HomeViewState extends State<HomeView>
           padding: context.padding.horizontalLow,
           child: Column(
             children: [
+              SizedBox(height: context.sized.height * 0.05),
               GestureDetector(
                 onTap: () => context.router.push(const ChatBotRoute()),
                 child: Container(
