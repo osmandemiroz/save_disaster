@@ -1,6 +1,7 @@
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
+import 'package:kartal/kartal.dart';
 
 ///ItemImageView
 class ItemImageView extends StatelessWidget {
@@ -13,13 +14,13 @@ class ItemImageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(4),
+      padding: context.padding.low,
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: context.border.normalBorderRadius,
         child: Image.memory(
           bytes,
-          width: 110,
-          height: 110,
+          width: context.sized.width * 0.5,
+          height: context.sized.height * 0.2,
           fit: BoxFit.cover,
         ),
       ),

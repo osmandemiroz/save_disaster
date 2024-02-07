@@ -46,6 +46,10 @@ class $AssetsImagesGen {
   AssetGenImage get icFlood =>
       const AssetGenImage('assets/images/ic_flood.png');
 
+  /// File path: assets/images/ic_gemini.png
+  AssetGenImage get icGemini =>
+      const AssetGenImage('assets/images/ic_gemini.png');
+
   /// File path: assets/images/ic_meeting_point.png
   AssetGenImage get icMeetingPoint =>
       const AssetGenImage('assets/images/ic_meeting_point.png');
@@ -65,6 +69,7 @@ class $AssetsImagesGen {
         icEarthquake,
         icFire,
         icFlood,
+        icGemini,
         icMeetingPoint,
         icSos,
         imgWorld

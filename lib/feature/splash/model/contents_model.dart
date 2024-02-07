@@ -45,4 +45,10 @@ List<OnboardingContents> contents = [
     description:
         'In this app you can find nearest blood donation center in your area. (Just in TURKIYE).',
   ),
+  OnboardingContents(
+    image: Assets.images.icGemini.image(),
+    title: 'Chat Bot',
+    description:
+        'In this app you can chat and get help from Gemini AI.You can ask questions about disaster or in any emergency situations.',
+  ),
 ];

@@ -1,5 +1,3 @@
-// ignore_for_file: unused_field, strict_raw_type
-
 import 'dart:math';
 
 import 'package:auto_route/auto_route.dart';
@@ -10,9 +8,9 @@ import 'package:save_disaster/feature/home/view/side_menu_view.dart';
 import 'package:save_disaster/feature/home/widget/blog_tile_widget.dart';
 import 'package:save_disaster/product/gen/index.dart';
 import 'package:save_disaster/product/navigation/app_router.dart';
+import 'package:save_disaster/product/widget/big_text.dart';
 
 /// This is the home view of the app
-/// It contains the side menu and the content
 @RoutePage()
 final class HomeView extends StatefulWidget {
   /// This widget is constructor for the home view
@@ -141,15 +139,22 @@ final class _HomeViewState extends State<HomeView>
               GestureDetector(
                 onTap: () => context.router.push(const ChatBotRoute()),
                 child: Container(
+                  padding: context.padding.medium,
                   width: context.sized.width,
                   height: context.sized.height * 0.3,
-                  color: Colors.red,
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: context.sized.height * 0.15,
+                        child: Assets.images.icGemini.image(),
+                      ),
+                      const BigText(title: 'Get Help from Gemini AI'),
+                    ],
+                  ),
                 ),
               ),
-              Assets.lottie.animWorld.lottie(
-                width: context.sized.width,
-                height: context.sized.height * 0.3,
-              ),
+              SizedBox(height: context.sized.height * 0.1),
+              const BigText(title: 'Latest News'),
               ListView.builder(
                 physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,

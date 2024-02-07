@@ -20,19 +20,7 @@ final class _ArticleViewState extends State<ArticleView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text('Save'),
-            Text(
-              'Disaster',
-              style: TextStyle(
-                color: Theme.of(context).textTheme.titleLarge!.color,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
-        ),
+        title: const Text('SaveDisaster'),
         centerTitle: true,
         elevation: 0,
       ),

@@ -39,7 +39,7 @@ final class MenuBarItem extends StatelessWidget {
           contentPadding: context.padding.verticalLow,
           onTap: onTap,
           leading: SizedBox(
-            height: context.sized.height * 0.05,
+            height: context.sized.height * 0.06,
             child: icon,
           ),
           title: Text(
