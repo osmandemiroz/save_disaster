@@ -1,4 +1,4 @@
-// ignore_for_file: lines_longer_than_80_chars, inference_failure_on_untyped_parameter
+// ignore_for_file: lines_longer_than_80_chars, inference_failure_on_untyped_parameter, avoid_multiple_declarations_per_line, unnecessary_statements
 
 import 'package:auto_route/auto_route.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -12,10 +12,19 @@ import 'package:shared_preferences/shared_preferences.dart';
 ///sos view mixin
 mixin SosViewMixin on State<SosView> {
   @override
+  void initState() {
+    nameController = TextEditingController();
+    surnameController = TextEditingController();
+    peopleController = TextEditingController();
+    super.initState();
+  }
+
+  @override
   void dispose() {
     super.dispose();
     nameController.dispose();
     surnameController.dispose();
+    peopleController.dispose();
   }
 
   ///button pressed
@@ -24,11 +33,13 @@ mixin SosViewMixin on State<SosView> {
   ///emergency color
   final Color emergencyColor = Colors.red.shade700;
 
-  ///name controller
-  TextEditingController nameController = TextEditingController();
+  ///list of people that who can receive sos
+  List<String> numbers = [];
 
-  ///surname controller
-  TextEditingController surnameController = TextEditingController();
+  ///name and surname controller
+  late final TextEditingController nameController,
+      surnameController,
+      peopleController;
 
   ///button name of the sos view
   final String buttonName = 'SOS';
@@ -126,5 +137,22 @@ mixin SosViewMixin on State<SosView> {
   void goBackHome() {
     dispose();
     context.router.push(const HomeRoute());
+  }
+
+  ///add people to the list of people
+  void addPeople() {
+    peopleController.text.isEmpty
+        ? null
+        : setState(() {
+            numbers.add(peopleController.text);
+            peopleController.clear();
+          });
+  }
+
+  ///remove people from the list of people
+  void deleteNumber(int index) {
+    setState(() {
+      numbers.removeAt(index);
+    });
   }
 }

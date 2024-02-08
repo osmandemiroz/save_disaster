@@ -35,6 +35,29 @@ final class _SosViewState extends State<SosView> with SosViewMixin {
                 color: emergencyColor,
               ),
               SizedBox(height: context.sized.height * 0.05),
+              ListTile(
+                title: TextField(
+                  keyboardType: TextInputType.number,
+                  controller: peopleController,
+                  decoration: InputDecoration(
+                    labelText: 'Enter the phone number who can receive',
+                    border: const OutlineInputBorder().copyWith(
+                      borderRadius: context.border.normalBorderRadius,
+                    ),
+                  ),
+                ),
+                trailing: IconButton(
+                  onPressed: addPeople,
+                  icon: const Icon(Icons.add),
+                ),
+              ),
+              if (numbers.isEmpty)
+                const Text('No phone number added')
+              else
+                Text(numbers.toString()),
+              SizedBox(
+                height: context.sized.height * 0.2,
+              ),
               TextField(
                 controller: nameController,
                 decoration: InputDecoration(
