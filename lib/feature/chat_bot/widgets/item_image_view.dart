@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 
 ///ItemImageView
-class ItemImageView extends StatelessWidget {
+final class ItemImageView extends StatelessWidget {
   ///ItemImageView
   const ItemImageView({required this.bytes, super.key});
 

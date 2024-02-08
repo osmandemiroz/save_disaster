@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:kartal/kartal.dart';
 
 ///ChatInputBox
-class ChatInputBox extends StatelessWidget {
+final class ChatInputBox extends StatelessWidget {
   ///ChatInputBox constructor
   const ChatInputBox({
     super.key,

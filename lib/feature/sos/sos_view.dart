@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
+import 'package:save_disaster/feature/sos/phone_number_widget.dart';
 import 'package:save_disaster/feature/sos/sos_view_mixin.dart';
 import 'package:save_disaster/product/widget/big_text.dart';
 
@@ -52,12 +53,26 @@ final class _SosViewState extends State<SosView> with SosViewMixin {
                 ),
               ),
               if (numbers.isEmpty)
-                const Text('No phone number added')
+                Container(
+                  height: context.sized.height * 0.108,
+                )
               else
-                Text(numbers.toString()),
-              SizedBox(
-                height: context.sized.height * 0.2,
-              ),
+                SizedBox(
+                  height: context.sized.height * 0.108,
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: numbers.length,
+                    itemBuilder: (_, index) {
+                      return PhoneNumberWidget(
+                        number: numbers[index],
+                        deleteNumber: () {
+                          deleteNumber(index);
+                        },
+                      );
+                    },
+                  ),
+                ),
               TextField(
                 controller: nameController,
                 decoration: InputDecoration(

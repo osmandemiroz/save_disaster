@@ -13,7 +13,7 @@ import 'package:save_disaster/product/gen/index.dart';
 import 'package:save_disaster/product/widget/desc_text.dart';
 
 ///SectionTextInputStream
-class SectionTextStreamInput extends StatefulWidget {
+final class SectionTextStreamInput extends StatefulWidget {
   ///SectionTextInputStream constructor
   const SectionTextStreamInput({super.key});
 
@@ -21,7 +21,7 @@ class SectionTextStreamInput extends StatefulWidget {
   State<SectionTextStreamInput> createState() => _SectionTextInputStreamState();
 }
 
-class _SectionTextInputStreamState extends State<SectionTextStreamInput> {
+final class _SectionTextInputStreamState extends State<SectionTextStreamInput> {
   final ImagePicker picker = ImagePicker();
   final controller = TextEditingController();
   final gemini = Gemini.instance;

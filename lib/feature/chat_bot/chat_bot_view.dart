@@ -7,7 +7,7 @@ import 'package:save_disaster/product/widget/big_text.dart';
 
 ///ChatBot View of the app
 @RoutePage()
-class ChatBotView extends StatefulWidget {
+final class ChatBotView extends StatefulWidget {
   ///ChatBotView constructor
   const ChatBotView({super.key});
 
@@ -15,7 +15,7 @@ class ChatBotView extends StatefulWidget {
   State<ChatBotView> createState() => _ChatBotViewState();
 }
 
-class _ChatBotViewState extends State<ChatBotView> with ChatBotViewMixin {
+final class _ChatBotViewState extends State<ChatBotView> with ChatBotViewMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
