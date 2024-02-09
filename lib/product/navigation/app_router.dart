@@ -10,7 +10,7 @@ import 'package:save_disaster/feature/flood/flood_view.dart';
 import 'package:save_disaster/feature/home/view/home_view.dart';
 import 'package:save_disaster/feature/home/view/side_menu_view.dart';
 import 'package:save_disaster/feature/meeting_point/meeting_point_view.dart';
-import 'package:save_disaster/feature/sos/sos_view.dart';
+import 'package:save_disaster/feature/sos/view/sos_view.dart';
 import 'package:save_disaster/feature/splash/view/splash_view.dart';
 
 part 'app_router.gr.dart';

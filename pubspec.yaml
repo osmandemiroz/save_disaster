@@ -57,9 +57,6 @@ dev_dependencies:
   auto_route_generator: ^7.3.2
   envied_generator: ^0.5.3
 
-  #SMS SENDER
-  flutter_sms: ^2.3.3
-
 flutter_gen:
   output: lib/product/gen
   integrations:

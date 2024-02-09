@@ -1,11 +1,11 @@
-// ignore_for_file: lines_longer_than_80_chars, inference_failure_on_untyped_parameter, avoid_multiple_declarations_per_line, unnecessary_statements
+// ignore_for_file: lines_longer_than_80_chars, inference_failure_on_untyped_parameter, avoid_multiple_declarations_per_line, unnecessary_statements, unawaited_futures
 
 import 'package:auto_route/auto_route.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:save_disaster/feature/sos/sos_view.dart';
+import 'package:save_disaster/feature/sos/view/sos_view.dart';
 import 'package:save_disaster/product/navigation/app_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -15,16 +15,16 @@ mixin SosViewMixin on State<SosView> {
   void initState() {
     nameController = TextEditingController();
     surnameController = TextEditingController();
-    peopleController = TextEditingController();
+
     super.initState();
   }
 
   @override
   void dispose() {
-    super.dispose();
     nameController.dispose();
     surnameController.dispose();
-    peopleController.dispose();
+
+    super.dispose();
   }
 
   ///button pressed
@@ -33,13 +33,8 @@ mixin SosViewMixin on State<SosView> {
   ///emergency color
   final Color emergencyColor = Colors.red.shade700;
 
-  ///list of people that who can receive sos
-  List<String> numbers = [];
-
   ///name and surname controller
-  late final TextEditingController nameController,
-      surnameController,
-      peopleController;
+  late final TextEditingController nameController, surnameController;
 
   ///button name of the sos view
   final String buttonName = 'SOS';
@@ -50,6 +45,9 @@ mixin SosViewMixin on State<SosView> {
 
   ///current location of the client
   Position? currentLocation;
+
+  ///shared preferences object
+  late SharedPreferences preferences;
 
   ///service permission of the sos view initially false
   late bool servicePermission = false;
@@ -96,10 +94,12 @@ mixin SosViewMixin on State<SosView> {
 
   ///save the address to the cache
   Future<void> saveAddress() async {
-    final preferences = await SharedPreferences.getInstance();
-    await preferences.setString('address', currentAddress);
-    await preferences.setDouble('latitude', currentLocation!.latitude);
-    await preferences.setDouble('longitude', currentLocation!.longitude);
+    preferences = await SharedPreferences.getInstance();
+
+    preferences
+      ..setString('address', currentAddress)
+      ..setDouble('latitude', currentLocation!.latitude)
+      ..setDouble('longitude', currentLocation!.longitude);
   }
 
   ///initialize address
@@ -137,22 +137,5 @@ mixin SosViewMixin on State<SosView> {
   void goBackHome() {
     dispose();
     context.router.push(const HomeRoute());
-  }
-
-  ///add people to the list of people
-  void addPeople() {
-    peopleController.text.isEmpty
-        ? null
-        : setState(() {
-            numbers.add(peopleController.text);
-            peopleController.clear();
-          });
-  }
-
-  ///remove people from the list of people
-  void deleteNumber(int index) {
-    setState(() {
-      numbers.removeAt(index);
-    });
   }
 }

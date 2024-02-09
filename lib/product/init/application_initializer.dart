@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';
 import 'package:save_disaster/firebase_options.dart';
 import 'package:save_disaster/product/config/env.dart';
@@ -18,5 +19,11 @@ final class ApplicationInitializer {
     );
 
     Gemini.init(apiKey: Env.chatBotApiKey);
+
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+      ),
+    );
   }
 }
